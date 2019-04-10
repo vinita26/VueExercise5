@@ -1,0 +1,33 @@
+<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+
+<div id="excercise">
+  <div>
+    <button @click="show=!show">Toggle</button>
+    <p v-show="show">You either see me!!</p>
+    <p v-show="!show">...or me</p>
+  </div>
+  
+  <div>
+    <ul>
+      <li v-for="(item,index) in newArray"> {{item }}-{{ index }}</li>
+      
+    </ul>
+    
+    <hr>
+    <ul>
+      <li v-for="(value,key,i) in favBook">{{ value }}-{{ key }}-{{i}}</li>
+    </ul>
+    
+    <hr>
+    
+    <ul>
+      <li v-for="value in myObject">{{ value }}
+      <template v-if:Array.isArray(value)>
+      <div v-for="number in values">{{number}}</div> 
+      </template>
+      <template v-else>{{value}}</template>
+        
+      </li>
+    </ul>
+  </div>
+</div>
